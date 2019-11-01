@@ -10,6 +10,15 @@
 #ifndef FIFO_OK
 	#define FIFO_OK 1
 #endif
+
+#ifdef USE_FULL_ASSERT
+#define assert_param(expr) ((expr) ? (void)0 : assert_failed((uint8_t *)__FILE__, __LINE__))
+void assert_failed(uint8_t* file, uint32_t line);
+#else
+#define assert_param(expr) ((void)0)
+
+#endif /* USE_FULL_ASSERT */
+//简单的FIFO控制结构，用于管理数组，这里要求每个存入fifo的单元要有同样的size
 typedef struct fifoCtrl_t
 {
 	void * buffAddr;
