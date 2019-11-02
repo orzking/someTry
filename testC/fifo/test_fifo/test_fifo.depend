@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1572712201 source:g:\practice\sometry\testc\fifo\fifo_test.c
+	<stdio.h>
+	<windows.h>
+	"fifo.h"
+
+1572708088 g:\practice\sometry\testc\fifo\fifo.h
+
+1572708072 source:g:\practice\sometry\testc\fifo\fifo.c
+	<assert.h>
+	"fifo.h"
+

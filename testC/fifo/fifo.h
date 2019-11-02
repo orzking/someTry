@@ -1,3 +1,13 @@
+/*usage:
+	int dataForPush=666;
+	int dataForPop=0;
+	int buff[10];//数组作为fifo的buffer
+	fifoCtrl_t new_fifo;
+	fifo_init(&new_fifo,buff,sizeof(int),10);
+	fifo_push(&new_fifo,&dataForPush);
+	fifo_pop(&new_fifo,&dataForPop);
+*/
+
 #ifndef FILE_FIFO_H
 #define FILE_FIFO_H
 
@@ -29,7 +39,7 @@ typedef struct fifoCtrl_t
 	unsigned char cellAmount;
 }fifoCtrl_t;
 
-unsigned char fifo_init(fifoCtrl_t* p_fifoCtrl,void* buffAddr,unsigned char cellSize,unsigned char cellAmount);
+void fifo_init(fifoCtrl_t* p_fifoCtrl,void* buffAddr,unsigned char cellSize,unsigned char cellAmount);
 unsigned char fifo_isFull(fifoCtrl_t* p_fifoCtrl);
 unsigned char fifo_isEmpty(fifoCtrl_t* p_fifoCtrl);
 unsigned char fifo_push(fifoCtrl_t* p_fifoCtrl,void* p_cellDataFrom);
